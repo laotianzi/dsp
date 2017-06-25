@@ -1,6 +1,8 @@
 [Think Stats Chapter 2 Exercise 4](http://greenteapress.com/thinkstats2/html/thinkstats2003.html#toc24) (Cohen's d)
 
->> import thinkstats2
+>> 
+```
+import thinkstats2
 import nsfg
 import numpy as np
 
@@ -20,5 +22,12 @@ live = preg[preg.outcome == 1]
 firsts = live[live.birthord == 1]
 others = live[live.birthord != 1]
 
+d1=CohenEffectSize(firsts.prglngth, others.prglngth)
 d2 = CohenEffectSize(firsts.totalwgt_lb, others.totalwgt_lb)
-d2
+print('The Cohen Effect Size in pregnancy length is %f.' %(d1))
+print('The Cohen Effect Size in total weight is %f.' %(d2))
+print('The difference between Cohens of pregancy length and total weight is %f.' %(d1-d2))
+```
+The Cohen Effect Size in pregnancy length is 0.028879.
+The Cohen Effect Size in total weight is -0.088673.
+The difference between Cohens of pregancy length and total weight is 0.117552.
